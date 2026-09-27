@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Result Viewer</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') center/cover no-repeat;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    text-align: center;
+    padding-top: 70px;
+  }
+  .box {
+    background: rgba(0,0,0,0.6);
+    display: inline-block;
+    padding: 30px 50px;
+    border-radius: 25px;
+    box-shadow: 0 0 25px #fff;
+    backdrop-filter: blur(5px);
+  }
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+    margin-bottom: 10px;
+  }
+  input {
+    margin: 8px;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    width: 80%;
+  }
+  button {
+    margin-top: 10px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .quote {
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffd;
+  }
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>Student Result Viewer</h1>
+    <input id="name" placeholder="Enter Name"><br>
+    <input id="marks" type="number" placeholder="Enter Marks"><br>
+    <button onclick="check()">Check</button>
+    <p id="res"></p>
+    <div class="quote">🌷 “Success doesn’t come to you — you go to it.” 🌷</div>
+  </div>
+
+<script>
+  function check(){
+    let name=document.getElementById('name').value;
+    let marks=document.getElementById('marks').value;
+    let res=document.getElementById('res');
+    if(!name||marks===""){res.innerHTML="⚠️ Fill all fields!";return;}
+    res.innerHTML=marks>=35?`🎉 ${name}, You Passed! Keep shining ✨`:`😔 ${name}, You Failed! Try again 🌈`;
+  }
+</script>
+</body>
+</html>
